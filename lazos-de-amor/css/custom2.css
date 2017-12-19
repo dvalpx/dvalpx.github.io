@@ -1,0 +1,123 @@
+.logo {
+    margin-top: -20px;
+    width: 240px;
+    height: 80px;
+}
+
+.h2-intro {
+    font-family: 'Ubuntu', sans-serif;
+    color: #FFF;
+}
+
+.h4-intro {
+    font-family: 'Ubuntu', sans-serif;
+    color: #FFF;
+}
+
+.p-intro {
+    color: #FFF;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 20px;
+}
+
+.ring-category-model {
+    margin-bottom: 20px;
+}
+
+.ring-category-title {
+    font-family: 'Exo 2', sans-serif;
+    margin-bottom: 15px;
+}
+
+.row-categories-2 {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.img-modal {
+    padding: 50px;
+    width: 800px;
+    height: 640px;
+    margin-left: 30px;
+}
+
+#myModal .modal-body {
+    max-height: 1200px;
+}
+
+.configurar-modelo-modal {
+    margin-left: 330px;
+    margin-top: -25px;
+    margin-bottom: 10px;
+}
+
+.cargar-modelo {
+    padding-bottom: 50px;
+}
+
+.form-cargar-modelo input {
+    margin-left: -210px;
+    width: 200px;
+}
+
+.form-cargar-modelo a {
+    margin-top: -63px;
+}
+
+.iniciar-sesion {
+    margin-top: 30px;
+    padding-bottom: 100px;
+}
+
+.iniciar-sesion h3 {
+    margin-left: 440px;
+}
+
+.iniciar-sesion ul {
+    list-style-type: none;
+    margin-left: 380px;
+}
+
+.iniciar-sesion ul li input {
+    width: 240px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.iniciar-sesion a {
+    margin-top: 10px;
+}
+
+.table-materiales {
+    margin-left: 175px;
+}
+
+.cargar-categoria {
+    margin-top: 30px;
+    padding-bottom: 100px;
+}
+
+.cargar-categoria h3 {
+    margin-left: 440px;
+}
+
+.cargar-categoria form ul {
+    list-style-type: none;
+}
+
+.cargar-categoria form ul li input {
+    margin-bottom: 5px;
+}
+
+.cargar-categoria form ul li textarea {
+    margin-bottom: 5px;
+}
+
+.cargar-categoria form a {
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.cargar-colores {
+    margin-left: 40px;
+}

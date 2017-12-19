@@ -1,0 +1,21 @@
+.main-intro {
+    padding-top: 110px;
+    padding-bottom: 100px;
+    background-image: url('../img/ring-background.jpg');
+}
+
+.main-intro article {
+    margin-top: -15px;
+}
+
+.main-intro article p {
+    color: #FFF;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    line-height: 30px;
+}
+
+.btn-configurar {
+    font-size: 18px;
+    float: right;
+}
