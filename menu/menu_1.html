@@ -4,24 +4,33 @@
         <title></title>
         <style>
             .container {
-                width: 1200px;
+                width: 974px;
                 height: 250px;
                 margin: 0 auto;
             }
             .menu-bg {
-                margin-left: 90px;
-                margin-top: 50px;
+                margin-left: 150px;
+                margin-top: 100px;
             }      
             .menu-items {
-                margin-left: 100px;
-                margin-top: -110px;
+                margin-top: -120px;
+                margin-left: 50px;
+                z-index: 2;
             }
             .menu-items img {
                 position: absolute;
             }
 
             .menu-items .item-2 {
-                margin-left: 150px;
+                margin-left: 130px;
+            }
+
+            .div-menu {
+                background-image: url('bg.jpg');
+                background-repeat: none;
+                width: 974px;
+                height: 522px;
+                z-index: 1;
             }
         </style>
     </head>
@@ -29,11 +38,13 @@
 
         <div class="container">
 
-            <img src="break-c.png" alt="" class="menu-bg">
+            <div class="div-menu">
+
+            </div>
 
             <div class="menu-items">
-                <a href="" class="menu-item">
-                    <img src="menu-1.png" alt="" width="120" height="90" >
+                <a href="">
+                    <img src="menu-1.png" alt="" width="120" height="90" class="menu-item">
                 </a>
                 
                 <a href="" class="item-2">
@@ -51,8 +62,8 @@
                 $('.menu-item').mouseover(function()
                 {
                     $(this).fadeIn()
-                    .css({top:20,position:'absolute'})
-                    .animate({top:59}, 800, function() {
+                    .css({top:350,position:'absolute'})
+                    .animate({top:410}, 800, function() {
                         //callback
                     });
                 });
