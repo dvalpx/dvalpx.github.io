@@ -45,6 +45,10 @@
                 width: 110px;
                 height: 90px;
             }
+
+            .img_menu {
+                position: relative;
+            }
         </style>
     </head>
     <body>
@@ -58,50 +62,54 @@
             <img src="bar.png" alt="" class="bar">
 
             <div class="bar_btns">
-                <img src="scroll_left_1.png" alt="" class="scroll_left">
-                <img src="scroll_right_1.png" alt="" class="scroll_right">
+                <a href="">
+                    <img src="scroll_left_1.png" alt="" class="scroll_left">
+                </a>
+                <a href="">
+                    <img src="scroll_right_3.png" alt="" class="scroll_right">
+                </a>
             </div>
 
 
             <ul>
                 <li>
                     <a href="">
-                        <img src="menu-1.png" alt="">
+                        <img src="menu-1.png" alt="" class="img_menu" id="img_1">
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="menu-2.png" alt="">
+                        <img src="menu-2.png" alt="" class="img_menu" id="img_2">
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="menu-3.png" alt="">
+                        <img src="menu-3.png" alt="" class="img_menu" id="img_3">
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="menu-1.png" alt="">
+                        <img src="menu-1.png" alt="" class="img_menu" id="img_4">
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="menu-2.png" alt="">
+                        <img src="menu-2.png" alt="" class="img_menu" id="img_5">
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="menu-3.png" alt="">
+                        <img src="menu-3.png" alt="" class="img_menu" id="img_6">
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="menu-1.png" alt="">
+                        <img src="menu-1.png" alt="" class="img_menu" id="img_7">
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="menu-2.png">
+                        <img src="menu-2.png" alt="" class="img_menu" id="img_8">
                     </a>
                 </li>                                                                       
             </ul>
@@ -113,7 +121,123 @@
         <script>
             $(function()
             {
+                var scrolls = 0;
+                var scroll_step = 000;
 
+                $('.scroll_right').hover(function(){
+                    if (scrolls <= 1) {
+                        $(this).attr('src', 'scroll_right_2.png');
+                    }
+                });
+                $('.scroll_right').mouseout(function(){
+                    if (scrolls <= 1) {
+                        $(this).attr('src', 'scroll_right_3.png');
+                    }
+                });          
+
+                $('.scroll_right').click(function(e)
+                {
+                    e.preventDefault();             
+
+                    if (scrolls <= 1) {
+                        var listItems = $("ul li a img");
+                        var image_number = 1;
+
+                        listItems.each(function(idx, img) {
+                            
+                            $(img).animate({width:"1px", height:"1px", top:"50px", left:"425px"}, 200);
+
+                            if (scrolls == 0) {
+                                $('#img_1').attr('src', 'menu-2.png');
+                                $('#img_2').attr('src', 'menu-3.png');
+                                $('#img_3').attr('src', 'menu-1.png');
+                                $('#img_4').attr('src', 'menu-2.png');
+                                $('#img_5').attr('src', 'menu-3.png');
+                                $('#img_6').attr('src', 'menu-1.png');
+                                $('#img_7').attr('src', 'menu-2.png');
+                                $('#img_8').attr('src', 'menu-3.png');                                                         
+                            }
+                            else if (scrolls == 1) {
+                                $('#img_1').attr('src', 'menu-3.png');
+                                $('#img_2').attr('src', 'menu-1.png');
+                                $('#img_3').attr('src', 'menu-2.png');
+                                $('#img_4').attr('src', 'menu-3.png');
+                                $('#img_5').attr('src', 'menu-1.png');
+                                $('#img_6').attr('src', 'menu-2.png');
+                                $('#img_7').attr('src', 'menu-3.png');
+                                $('#img_8').attr('src', 'menu-1.png');                                                              
+                            }                           
+
+                            if (scrolls == 1) {
+                                $('.scroll_right').attr('src', 'scroll_right_1.png');
+                            }
+
+                        });
+
+                        $(".img_menu").animate({width:"110px", height:"90px", top:"0px", left:"0px"}, 200);
+
+                        $('.scroll_left').attr('src', 'scroll_left_3.png');
+
+                        $('.scroll_left').hover(function(){
+                            $(this).attr('src', 'scroll_left_2.png');
+                        });
+                        $('.scroll_left').mouseout(function(){
+                            $(this).attr('src', 'scroll_left_3.png');
+                        });
+                    }
+
+                    scrolls += 1;
+                });
+
+                $('.scroll_left').click(function(e)
+                {
+                    e.preventDefault();
+
+                    if (scrolls >= 1) {
+
+                        $('.scroll_right').attr('src', 'scroll_right_3.png');
+
+                        var listItems = $("ul li a img");
+
+                        listItems.each(function(idx, img) {
+                            
+                            $(img).animate({width:"1px", height:"1px", top:"50px", left:"400px"}, 200);
+
+                            if (scrolls == 2) {
+                                $('#img_1').attr('src', 'menu-2.png');
+                                $('#img_2').attr('src', 'menu-3.png');
+                                $('#img_3').attr('src', 'menu-1.png');
+                                $('#img_4').attr('src', 'menu-2.png');
+                                $('#img_5').attr('src', 'menu-3.png');
+                                $('#img_6').attr('src', 'menu-1.png');
+                                $('#img_7').attr('src', 'menu-2.png');
+                                $('#img_8').attr('src', 'menu-3.png');                                                         
+                            }
+                            else if (scrolls == 1) {
+                                $('#img_1').attr('src', 'menu-1.png');
+                                $('#img_2').attr('src', 'menu-2.png');
+                                $('#img_3').attr('src', 'menu-3.png');
+                                $('#img_4').attr('src', 'menu-1.png');
+                                $('#img_5').attr('src', 'menu-2.png');
+                                $('#img_6').attr('src', 'menu-3.png');
+                                $('#img_7').attr('src', 'menu-1.png');
+                                $('#img_8').attr('src', 'menu-2.png');                                                              
+                            }                            
+
+                            if (scrolls == 1) {
+                                $('.scroll_left').attr('src', 'scroll_left_1.png');
+                                $('.scroll_left').unbind('mouseenter mouseleave');
+                                $('.scroll_left').unbind('mouseout');
+                            }
+
+                        });
+
+                        $(".img_menu").animate({width:"110px", height:"90px", top:"0px", left:"0px"}, 200);
+
+                    }
+
+                    scrolls -= 1;                                        
+                }); 
             });
         </script>
     </body>
