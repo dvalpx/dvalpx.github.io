@@ -2,7 +2,14 @@
     <head>
         <meta charset="utf-8"> 
         <title></title>
+        <link rel="stylesheet" href="animate.css">
         <style>
+            @font-face {
+                font-family: 'DroidSerifItalic';
+                src: url('fonts/DroidSerif-Italic.ttf');
+                font-weight: normal;
+                font-style: normal;
+            }            
             .container {
                 width: 1200px;
                 height: 900px;
@@ -14,6 +21,7 @@
                 background-position-x: -250px;
                 width: 1200px;
                 height: 350px;
+                margin-top: 89px;
             }
             .bar {
                 width: 1200px;
@@ -32,7 +40,7 @@
             ul {
                 list-style-type: none;
                 margin-left: 80px;
-                margin-top: -95px;
+                margin-top: -125px;
             }
             ul li {
                 display: inline;
@@ -42,16 +50,139 @@
                 text-decoration: none;
             }
             ul li a img {
-                width: 110px;
-                height: 90px;
+                width: 136px;
+                height: 118px;
             }
-
             .img_menu {
-                position: relative;
+                position: absolute;
             }
+            #img_2 {
+                margin-left: 165px;
+            }
+            #img_3 {
+                margin-left: 320px;
+            }
+            #img_4 {
+                margin-left: 465px;
+            }
+            #img_5 {
+                margin-left: 625px;
+            }
+            #img_6 {
+                margin-left: 785px;
+            }
+            .top {
+                background-image: url('top-bg.jpg');
+                width: 100%;
+                height: 88px;
+                top: 0;
+                left: 0;
+                position: absolute;
+            }
+            .boxes {
+                margin-top: 190px;
+            }
+            .box-1 {
+                width: 500px;
+                height: 210px;
+                float: left;
+            }
+            .box-2 {
+                width: 278px;
+                height: 210px;
+                margin-left: 600px;
+                float: left;
+                margin-top: -210px;          
+            }
+            .box-2 img {
+                margin-left: 160px;
+            }
+            .box-2 h3 {
+                font-family: 'DroidSerifItalic', Arial, sans-serif;
+                font-weight: normal;
+                font-size: 16px;
+                margin-left: 30px;
+                width: 100px;
+                line-height: 23px;
+                margin-top: -60px;
+            }
+            .box-2 p {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                width: 235px;
+                margin-left: 25px;
+                margin-top: 25px;
+                color: #666;    
+            }
+            .box-2 a {
+                font-family: Arial, Helvetica, sans-serif;
+                color: #000;
+                text-decoration: none;
+                font-size: 12px;
+                font-weight: bold;
+                background-image: url('btn-normal.png');
+                background-repeat: no-repeat;
+                padding: 6px 0 0 15px;
+                width: 147px;
+                height: 60px;
+                background-position: 0px 0px;
+                display: block;
+                margin-left: 22px;
+            }
+            .box-2 a:hover {
+                background-image: url('btn-hover.png');
+            }
+            .box-3 {
+                width: 278px;
+                height: 210px;
+                margin-left: 890px;
+                margin-top: -210px;
+                float: left;
+                border-left: solid 1px #CCC;
+            }
+            .box-3 img {
+                margin-left: 160px;
+            }
+            .box-3 h3 {
+                font-family: 'DroidSerifItalic', Arial, sans-serif;
+                font-weight: normal;
+                font-size: 16px;
+                margin-left: 30px;
+                width: 80px;
+                line-height: 23px;
+                margin-top: -60px;
+            }
+            .box-3 p {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                width: 235px;
+                margin-left: 25px;
+                margin-top: 25px;
+                color: #666;    
+            }
+            .box-3 a {
+                font-family: Arial, Helvetica, sans-serif;
+                color: #000;
+                text-decoration: none;
+                font-size: 12px;
+                font-weight: bold;
+                background-image: url('btn-normal.png');
+                background-repeat: no-repeat;
+                padding: 6px 0 0 15px;
+                width: 147px;
+                height: 60px;
+                background-position: 0px 0px;
+                display: block;
+                margin-left: 22px;
+            }
+            .box-3 a:hover {
+                background-image: url('btn-hover.png');
+            }                                                               
         </style>
     </head>
     <body>
+
+        <div class="top"></div>
 
         <div class="container">
 
@@ -96,23 +227,38 @@
                     <a href="">
                         <img src="menu-2.png" alt="" class="img_menu" id="img_5">
                     </a>
-                </li>
+                </li>   
                 <li>
                     <a href="">
                         <img src="menu-3.png" alt="" class="img_menu" id="img_6">
                     </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="menu-1.png" alt="" class="img_menu" id="img_7">
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="menu-2.png" alt="" class="img_menu" id="img_8">
-                    </a>
-                </li>                                                                       
+                </li>                                                                                                                                         
             </ul>
+
+            <div class="boxes">
+                <div class="box-1">
+                    
+                </div>
+                <div class="box-2">
+                    <img src="folder.png" alt="">
+                    <h3>Ver anillos guardados</h3>
+                    <p>
+                        ¿Has configurado el anillo que quieres y te gustar&iacute;a verlo nuevamente? 
+                        Entonces comienza aqu&iacute; colocando el respectivo ID del anillo.
+                    </p>
+                    <a href="">» Ver anillo</a>
+                </div>
+                <div class="box-3">
+                    <img src="mapa.png" alt="">
+                    <h3>Joyeros en tu zona</h3>
+                    <p>
+                        Aqu&iacute; puedes conseguir un joyero en tu zona y organizar una cita para consultar. El joyero te dar&aacute; asesoramiento
+                        profesional, determinar&aacute; las medidas exactas de tu anilla y pedir&aacute; los anillos por ti.
+                    </p>
+                    <a href="#">» Mostrar joyeros</a>                    
+                </div>  
+            </div>
+          
 
         </div>
 
@@ -121,6 +267,11 @@
         <script>
             $(function()
             {
+                
+                $('a').click(function (e) {
+                    e.preventDefault();
+                });
+
                 var scrolls = 0;
                 var scroll_step = 000;
 
@@ -143,38 +294,135 @@
                         var listItems = $("ul li a img");
                         var image_number = 1;
 
-                        listItems.each(function(idx, img) {
-                            
-                            $(img).animate({width:"1px", height:"1px", top:"50px", left:"425px"}, 200);
+                        if (scrolls == 0) {
+                            $("#img_1").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_1').attr('src', 'menu-3.png'); 
 
-                            if (scrolls == 0) {
-                                $('#img_1').attr('src', 'menu-2.png');
-                                $('#img_2').attr('src', 'menu-3.png');
-                                $('#img_3').attr('src', 'menu-1.png');
-                                $('#img_4').attr('src', 'menu-2.png');
-                                $('#img_5').attr('src', 'menu-3.png');
-                                $('#img_6').attr('src', 'menu-1.png');
-                                $('#img_7').attr('src', 'menu-2.png');
-                                $('#img_8').attr('src', 'menu-3.png');                                                         
-                            }
-                            else if (scrolls == 1) {
-                                $('#img_1').attr('src', 'menu-3.png');
-                                $('#img_2').attr('src', 'menu-1.png');
-                                $('#img_3').attr('src', 'menu-2.png');
-                                $('#img_4').attr('src', 'menu-3.png');
-                                $('#img_5').attr('src', 'menu-1.png');
-                                $('#img_6').attr('src', 'menu-2.png');
-                                $('#img_7').attr('src', 'menu-3.png');
-                                $('#img_8').attr('src', 'menu-1.png');                                                              
-                            }                           
+                                $("#img_1").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 100, function()
+                                {
+                                    //
+                                });
+                                
+                            });
+                            $("#img_2").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_2').attr('src', 'menu-1.png'); 
 
-                            if (scrolls == 1) {
-                                $('.scroll_right').attr('src', 'scroll_right_1.png');
-                            }
+                                $("#img_2").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 100, function()
+                                {
+                                    //
+                                });
+                                
+                            });
+                            $("#img_3").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_3').attr('src', 'menu-2.png'); 
 
-                        });
+                                $("#img_3").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 100, function()
+                                {
+                                    //
+                                });
+                                
+                            });
+                            $("#img_4").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_4').attr('src', 'menu-3.png'); 
 
-                        $(".img_menu").animate({width:"110px", height:"90px", top:"0px", left:"0px"}, 200);
+                                $("#img_4").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 250, function()
+                                {
+                                    //
+                                });
+                                
+                            }); 
+                            $("#img_5").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_5').attr('src', 'menu-1.png'); 
+
+                                $("#img_5").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 300, function()
+                                {
+                                    //
+                                });
+                                
+                            }); 
+                            $("#img_6").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_6').attr('src', 'menu-2.png'); 
+
+                                $("#img_6").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 350, function()
+                                {
+                                    //
+                                });
+                                
+                            });                                                                                                                                            
+                        }
+
+                        else if (scrolls == 1) {
+                            $("#img_1").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_1').attr('src', 'menu-2.png'); 
+
+                                $("#img_1").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 100, function()
+                                {
+                                    //
+                                });
+                                
+                            });
+                            $("#img_2").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_2').attr('src', 'menu-3.png'); 
+
+                                $("#img_2").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 100, function()
+                                {
+                                    //
+                                });
+                                
+                            });
+                            $("#img_3").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_3').attr('src', 'menu-1.png'); 
+
+                                $("#img_3").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 100, function()
+                                {
+                                    //
+                                });
+                                
+                            });
+                            $("#img_4").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_4').attr('src', 'menu-2.png'); 
+
+                                $("#img_4").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 250, function()
+                                {
+                                    //
+                                });
+                                
+                            }); 
+                            $("#img_5").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_5').attr('src', 'menu-3.png'); 
+
+                                $("#img_5").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 300, function()
+                                {
+                                    //
+                                });
+                                
+                            }); 
+                            $("#img_6").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_6').attr('src', 'menu-1.png'); 
+
+                                $("#img_6").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 350, function()
+                                {
+                                    //
+                                });
+                                
+                            });
+                        }                           
+
+                        if (scrolls == 1) {
+                            $('.scroll_right').attr('src', 'scroll_right_1.png');
+                        }
 
                         $('.scroll_left').attr('src', 'scroll_left_3.png');
 
@@ -197,42 +445,137 @@
 
                         $('.scroll_right').attr('src', 'scroll_right_3.png');
 
-                        var listItems = $("ul li a img");
+                        if (scrolls == 2) {
+                            $("#img_1").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_1').attr('src', 'menu-3.png'); 
 
-                        listItems.each(function(idx, img) {
-                            
-                            $(img).animate({width:"1px", height:"1px", top:"50px", left:"400px"}, 200);
+                                $("#img_1").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 100, function()
+                                {
+                                    //
+                                });
+                                
+                            });
+                            $("#img_2").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_2').attr('src', 'menu-1.png'); 
 
-                            if (scrolls == 2) {
-                                $('#img_1').attr('src', 'menu-2.png');
-                                $('#img_2').attr('src', 'menu-3.png');
-                                $('#img_3').attr('src', 'menu-1.png');
-                                $('#img_4').attr('src', 'menu-2.png');
-                                $('#img_5').attr('src', 'menu-3.png');
-                                $('#img_6').attr('src', 'menu-1.png');
-                                $('#img_7').attr('src', 'menu-2.png');
-                                $('#img_8').attr('src', 'menu-3.png');                                                         
-                            }
-                            else if (scrolls == 1) {
-                                $('#img_1').attr('src', 'menu-1.png');
-                                $('#img_2').attr('src', 'menu-2.png');
-                                $('#img_3').attr('src', 'menu-3.png');
-                                $('#img_4').attr('src', 'menu-1.png');
-                                $('#img_5').attr('src', 'menu-2.png');
-                                $('#img_6').attr('src', 'menu-3.png');
-                                $('#img_7').attr('src', 'menu-1.png');
-                                $('#img_8').attr('src', 'menu-2.png');                                                              
-                            }                            
+                                $("#img_2").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 100, function()
+                                {
+                                    //
+                                });
+                                
+                            });
+                            $("#img_3").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_3').attr('src', 'menu-2.png'); 
 
-                            if (scrolls == 1) {
-                                $('.scroll_left').attr('src', 'scroll_left_1.png');
-                                $('.scroll_left').unbind('mouseenter mouseleave');
-                                $('.scroll_left').unbind('mouseout');
-                            }
+                                $("#img_3").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 100, function()
+                                {
+                                    //
+                                });
+                                
+                            });
+                            $("#img_4").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_4').attr('src', 'menu-3.png'); 
 
-                        });
+                                $("#img_4").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 250, function()
+                                {
+                                    //
+                                });
+                                
+                            }); 
+                            $("#img_5").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_5').attr('src', 'menu-1.png'); 
 
-                        $(".img_menu").animate({width:"110px", height:"90px", top:"0px", left:"0px"}, 200);
+                                $("#img_5").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 300, function()
+                                {
+                                    //
+                                });
+                                
+                            }); 
+                            $("#img_6").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_6').attr('src', 'menu-2.png'); 
+
+                                $("#img_6").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 350, function()
+                                {
+                                    //
+                                });
+                                
+                            });
+                        }
+
+                        else if (scrolls == 1) {
+                            $("#img_1").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_1').attr('src', 'menu-1.png'); 
+
+                                $("#img_1").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 100, function()
+                                {
+                                    //
+                                });
+                                
+                            });
+                            $("#img_2").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_2').attr('src', 'menu-2.png'); 
+
+                                $("#img_2").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 100, function()
+                                {
+                                    //
+                                });
+                                
+                            });
+                            $("#img_3").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_3').attr('src', 'menu-3.png'); 
+
+                                $("#img_3").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 100, function()
+                                {
+                                    //
+                                });
+                                
+                            });
+                            $("#img_4").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_4').attr('src', 'menu-1.png'); 
+
+                                $("#img_4").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 250, function()
+                                {
+                                    //
+                                });
+                                
+                            }); 
+                            $("#img_5").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_5').attr('src', 'menu-2.png'); 
+
+                                $("#img_5").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 300, function()
+                                {
+                                    //
+                                });
+                                
+                            }); 
+                            $("#img_6").stop().animate({width:"1px", height:"1px", top:"490px", left:"300px"}, 100, function() 
+                            {
+                                $('#img_6').attr('src', 'menu-3.png'); 
+
+                                $("#img_6").animate({width:"130px", height:"110px", top:"380px", left:"230px"}, 350, function()
+                                {
+                                    //
+                                });
+                                
+                            });                                 
+                        }                            
+
+                        if (scrolls == 1) {
+                            $('.scroll_left').attr('src', 'scroll_left_1.png');
+                            $('.scroll_left').unbind('mouseenter mouseleave');
+                            $('.scroll_left').unbind('mouseout');
+                        }
 
                     }
 
