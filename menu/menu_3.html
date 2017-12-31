@@ -25,20 +25,21 @@
             }
             .bar {
                 width: 1200px;
+                height: 67px;
                 margin-top: 25px;
             }
             .bar_btns {
-                margin-top: -85px;
+                margin-top: -67px;
             }
             .scroll_left {
-                margin-left: 30px;
+                margin-left: 25px;
                 z-index: 1000;
                 position: relative;
             }
             .scroll_right {
                 float: right;
                 position: relative;
-                margin-right: 25px;
+                margin-right: 20px;
                 z-index: 1000;
             }
             ul {
@@ -54,11 +55,13 @@
                 text-decoration: none;
             }
             ul li a img {
-                width: 136px;
-                height: 118px;
+                width: 128px;
+                height: 139px;  
             }
             .img_menu {
                 position: absolute;
+                width: 128px;
+                height: 139px;                
             }
             #img_2 {
                 margin-left: 165px;
@@ -247,7 +250,7 @@
                 margin-top: 15px;
             }
             .images-models-1 {
-                margin-top: 300px;
+                margin-top: 345px;
                 width: 1200px;
                 height: 450px;
                 padding-bottom: 20px;
@@ -300,9 +303,12 @@
                 margin-top: 40px;
             } 
             .container-images-menu {
-                width: 1200px;
-                height: 200px;
+                width: 920px;
+                height: 150px;
                 position: relative;
+                margin-left: 140px;
+                margin-top: -140px;
+                margin-bottom: 45px;
             }                                                                                                                             
         </style>
     </head>
@@ -328,37 +334,29 @@
             </div>
 
             <div class="container-images-menu">
-                <ul>
-                    <li>
+                    <a href="">
+                        <img src="images/rings/r1.png" alt="" class="img_menu" id="img_1">
+                    </a>
+
                         <a href="">
-                            <img src="menu-1.png" alt="" class="img_menu" id="img_1">
+                            <img src="images/rings/r2.png" alt="" class="img_menu" id="img_2">
                         </a>
-                    </li>
-                    <li>
+
                         <a href="">
-                            <img src="menu-2.png" alt="" class="img_menu" id="img_2">
+                            <img src="images/rings/r3.png" alt="" class="img_menu" id="img_3">
                         </a>
-                    </li>
-                    <li>
+
                         <a href="">
-                            <img src="menu-3.png" alt="" class="img_menu" id="img_3">
+                            <img src="images/rings/r4.png" alt="" class="img_menu" id="img_4">
                         </a>
-                    </li>
-                    <li>
+
                         <a href="">
-                            <img src="menu-1.png" alt="" class="img_menu" id="img_4">
+                            <img src="images/rings/r5.png" alt="" class="img_menu" id="img_5">
                         </a>
-                    </li>
-                    <li>
+
                         <a href="">
-                            <img src="menu-2.png" alt="" class="img_menu" id="img_5">
-                        </a>
-                    </li>   
-                    <li>
-                        <a href="">
-                            <img src="menu-3.png" alt="" class="img_menu" id="img_6">
-                        </a>
-                    </li>                                                                                                                                         
+                            <img src="images/rings/r6.png" alt="" class="img_menu" id="img_6">
+                        </a>                                                                                                                                      
                 </ul>
             </div>
 
@@ -465,130 +463,51 @@
                         var listItems = $("ul li a img");
                         var image_number = 1;
 
-                        if (scrolls == 0) {
-                            $("#img_1").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_1').attr('src', 'menu-3.png'); 
+                        var idNumber = 1;
 
-                                $("#img_1").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
+                        function changeMenu(idNumber, i, timeMs) {
+
+                            $('#img_' + idNumber).stop().animate({width:"1px", height:"1px", top:"119px", left:"60px"}, 100, function() 
+                            {
+                                $('#img_' + idNumber).attr('src', 'images/rings/r' + i + '.png'); 
+
+                                $('#img_' + idNumber).animate({width:"128px", height:"139px", top:"0px", left:"0px"}, timeMs, function()
                                 {
-                                    //
+                                    // 
                                 });
-                                
+                                    
                             });
-                            $("#img_2").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_2').attr('src', 'menu-1.png'); 
 
-                                $("#img_2").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            });
-                            $("#img_3").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_3').attr('src', 'menu-2.png'); 
+                        }
 
-                                $("#img_3").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            });
-                            $("#img_4").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_4').attr('src', 'menu-3.png'); 
+                        if (scrolls == 0) {    
 
-                                $("#img_4").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            }); 
-                            $("#img_5").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_5').attr('src', 'menu-1.png'); 
+                            var timeMs = 200; 
 
-                                $("#img_5").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            }); 
-                            $("#img_6").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_6').attr('src', 'menu-2.png'); 
+                            for (i = 7; i < 13; i++) {
 
-                                $("#img_6").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //$('img').removeAttr('style');
-                                });
-                                
-                            });                                                                                                                                            
+                                changeMenu(idNumber, i, timeMs);
+
+                                idNumber++;
+                                timeMs += 75;
+
+                            }
+                                                                                                                                                                       
                         }
 
                         else if (scrolls == 1) {
-                            $("#img_1").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_1').attr('src', 'menu-2.png'); 
 
-                                $("#img_1").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            });
-                            $("#img_2").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_2').attr('src', 'menu-3.png'); 
+                            var timeMs = 200; 
 
-                                $("#img_2").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            });
-                            $("#img_3").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_3').attr('src', 'menu-1.png'); 
+                            for (i = 13; i < 19; i++) {
 
-                                $("#img_3").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            });
-                            $("#img_4").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_4').attr('src', 'menu-2.png'); 
+                                changeMenu(idNumber, i, timeMs);
 
-                                $("#img_4").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            }); 
-                            $("#img_5").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_5').attr('src', 'menu-3.png'); 
+                                idNumber++;
+                                timeMs += 75;
 
-                                $("#img_5").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            }); 
-                            $("#img_6").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_6').attr('src', 'menu-1.png'); 
-
-                                $("#img_6").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            });
+                            }
+              
                         }                           
 
                         if (scrolls == 1) {
