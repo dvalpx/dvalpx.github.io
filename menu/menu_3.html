@@ -3,6 +3,7 @@
         <meta charset="utf-8"> 
         <title></title>
         <link rel="stylesheet" href="animate.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
         <style>
             @font-face {
                 font-family: 'DroidSerifItalic';
@@ -309,7 +310,80 @@
                 margin-left: 140px;
                 margin-top: -140px;
                 margin-bottom: 45px;
-            }                                                                                                                             
+            }
+            .blocker {
+                z-index: 2000 !important;
+                background: rgba(239, 236, 227, 0.80)
+            }
+            .modal {
+                border-radius: 0px !important;
+                max-width: 662px !important;
+                height: 387px;
+            }                                 
+            .modal-container {
+                border: 1px dotted #CCC;
+                width: 650px;
+                height: 375px;
+                margin-left: -25px;
+                margin-top: -10px;
+                font-family: Arial, Helvetica, sans-serif; 
+            }
+            .modal-container h2 {
+                color: #666;
+                float: left;
+                font-size: 16px;
+                margin-left: 15px;
+            }
+            .modal-container p {
+                font-size: 11px;
+                float: left;
+                margin-left: 15px;
+            }
+            #fieldset-one {
+                float:left; 
+                border:1px solid #d3cdbf;
+                height:150px;
+                width:250px;
+                padding:10px;
+                margin-left: 15px;
+                margin-top: 15px;
+            }
+            #fieldset-two {
+                float:left; 
+                border:1px solid #d3cdbf;
+                height:150px;
+                width:300px;
+                padding:10px;
+                margin-top: 15px;
+            }
+            #fieldset-two label {
+                font-size: 11px;
+                margin-bottom: 5px;
+            }                              
+            .modal-container legend {
+                font-size: 11px;
+            }
+            .modal-container .input-ring-id {
+                margin-left: 10px;
+                margin-top: 5px;
+            }
+            .modal-container select {
+                margin-left: 10px;
+            }
+            .close-modal {
+                display: none !important;
+            }                               
+            .close-modal-custom {
+                background-image: url('images/close-1.png');
+                background-repeat: no-repeat;
+                height: 23px;
+                width: 25px;
+                float: right;
+                margin-top: 5px;
+            }
+            .close-modal-custom:hover {
+                background-image: url('images/close-2.png');
+            }                                                                   
         </style>
     </head>
     <body>
@@ -394,7 +468,7 @@
                         ¿Has configurado el anillo que quieres y te gustar&iacute;a verlo nuevamente? 
                         Entonces comienza aqu&iacute; colocando el respectivo ID del anillo.
                     </p>
-                    <a href="">» Ver anillo</a>
+                    <a href="#ex1" rel="modal:open">» Ver anillo</a>
                 </div>
                 <div class="box-3">
                     <img src="mapa.png" alt="">
@@ -425,14 +499,42 @@
 
             <div class="video-container">
                 <div class="video">
-                    <iframe width="870" height="489" src="https://www.youtube.com/embed/LCSbEmIx8CQ?autoplay=1&amp;autohide=1&amp;showinfo=0&amp;loop=1&amp;playlist=LCSbEmIx8CQ&amp;mute=1" frameborder="0" allowfullscreen=""></iframe>
+                    <iframe width="870" height="489" src="https://www.youtube.com/embed/LCSbEmIx8CQ?autoplay=0&amp;autohide=1&amp;showinfo=0&amp;loop=1&amp;playlist=LCSbEmIx8CQ&amp;mute=1" frameborder="0" allowfullscreen=""></iframe>
                 </div>
             </div>
 
         </div>
 
+        <div id="ex1" class="modal">
+            <div class="modal-container">
+                <h2>Cargar anillos</h2>
+                <a href="#" rel="modal:close" class="close-modal-custom"></a>
+                <p>Puedes usar el nombre que le diste a tu anillo para cargar el anillo guardado
+                   en tu computadora o utilizar el ID del anillo para acceder desde otro dispositivo.</p>
+                   <fieldset id="fieldset-one">
+                        <legend style="padding:0 5px;color:#97907D;">
+                          Load rings    </legend>
+                          <select id="myRings" size="5" style="width:230px;padding:0 0 0 5px;"></select>
+                    </fieldset>
+                    <fieldset id="fieldset-two">
+                            <legend style="padding:0 5px;color:#97907D;">
+                                Load via an existing wedding ring ID    
+                            </legend>
+                            <div class="input-ring-id">  
+                                <label>
+                                ID del anillo:
+                              </label>
+                              <br>
+                              <input id="myRingTID" style="width:250px;padding:0 0 0 5px;margin-top:2px;">
+                              <br>
+                            </div>
+                          </fieldset>
+            </div>
+        </div>
+
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="https://code.jquery.com/jquery-migrate-3.0.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
         <script>
             $(function()
             {
@@ -530,135 +632,52 @@
                 $('.scroll_left').click(function(e)
                 {
                     e.preventDefault();
+                    var image_number = 1;
+                    var idNumber = 1;                    
+
+                    function changeMenu(idNumber, i, timeMs) {
+
+                        $('#img_' + idNumber).stop().animate({width:"1px", height:"1px", top:"119px", left:"60px"}, 100, function() 
+                            {
+                            $('#img_' + idNumber).attr('src', 'images/rings/r' + i + '.png'); 
+
+                            $('#img_' + idNumber).animate({width:"128px", height:"139px", top:"0px", left:"0px"}, timeMs, function()
+                            {
+                                // 
+                            });
+                                    
+                        });
+
+                    }                    
 
                     if (scrolls >= 1) {
 
                         $('.scroll_right').attr('src', 'scroll_right_3.png');
 
                         if (scrolls == 2) {
-                            $("#img_1").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_1').attr('src', 'menu-3.png'); 
+                            var timeMs = 200; 
 
-                                $("#img_1").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            });
-                            $("#img_2").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_2').attr('src', 'menu-1.png'); 
+                            for (i = 7; i < 13; i++) {
 
-                                $("#img_2").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            });
-                            $("#img_3").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_3').attr('src', 'menu-2.png'); 
+                                changeMenu(idNumber, i, timeMs);
 
-                                $("#img_3").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            });
-                            $("#img_4").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_4').attr('src', 'menu-3.png'); 
+                                idNumber++;
+                                timeMs += 75;
 
-                                $("#img_4").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            }); 
-                            $("#img_5").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_5').attr('src', 'menu-1.png'); 
-
-                                $("#img_5").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            }); 
-                            $("#img_6").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_6').attr('src', 'menu-2.png'); 
-
-                                $("#img_6").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            });
+                            }   
                         }
 
                         else if (scrolls == 1) {
-                            $("#img_1").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_1').attr('src', 'menu-1.png'); 
+                            var timeMs = 200; 
 
-                                $("#img_1").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            });
-                            $("#img_2").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_2').attr('src', 'menu-2.png'); 
+                            for (i = 1; i < 7; i++) {
 
-                                $("#img_2").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            });
-                            $("#img_3").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_3').attr('src', 'menu-3.png'); 
+                                changeMenu(idNumber, i, timeMs);
 
-                                $("#img_3").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            });
-                            $("#img_4").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_4').attr('src', 'menu-1.png'); 
+                                idNumber++;
+                                timeMs += 75;
 
-                                $("#img_4").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            }); 
-                            $("#img_5").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_5').attr('src', 'menu-2.png'); 
-
-                                $("#img_5").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            }); 
-                            $("#img_6").stop().animate({width:"1px", height:"1px", top:"120px", left:"300px"}, 100, function() 
-                            {
-                                $('#img_6').attr('src', 'menu-3.png'); 
-
-                                $("#img_6").animate({width:"130px", height:"110px", top:"10px", left:"130px"}, 350, function()
-                                {
-                                    //
-                                });
-                                
-                            });                                 
+                            }                              
                         }                            
 
                         if (scrolls == 1) {
