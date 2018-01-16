@@ -11,7 +11,13 @@
 @font-face{
     font-family: 'BentonSans';
     src: url('fonts/BentonSans-Book.otf');
-}                        
+}
+
+@font-face{
+    font-family: 'CinzelRegular';
+    src: url('fonts/Cinzel-Regular.otf');
+} 
+
 .container {
     width: 1200px;
     height: 900px;
@@ -407,33 +413,33 @@ ul li a img {
     margin-left: 5px;
 }                  
 .top-white-container {
-    width: 1200px;
-    height: 30px;
+    width: 1400px;
+    height: 35px;
     background-color: #FFF;
     margin: 0 auto;
 }
 .top .top-white p {
     font-family: 'montserratFont', sans-serif;
     font-size: 10px;
-    margin-left: 15px;
+    margin-left: 35px;
     float: left;
-    margin-top: 8px;
+    margin-top: 11px;
     color: #333;
 }                                         
 .top .top-white .headphones-img {
     float: left;
-    margin-top: 5px;
-    margin-left: 55px;
+    margin-top: 9px;
+    margin-left: 180px;
 }
 .top .top-white .headphones {
-    margin-top: 8px;
+    margin-top: 11px;
     float: left;
     margin-left: 7px;
 }  
 .phone-img {
     float: left;
-    margin-top: 5px;
-    margin-left: 25px;
+    margin-top: 8px;
+    margin-left: 40px;
 }          
 .phone {
     margin-left: 5px !important;                
