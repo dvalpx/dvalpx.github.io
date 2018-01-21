@@ -96,7 +96,7 @@ ul li a img {
     position: absolute;
 }
 .top-white {
-    height: 30px;
+    height: 35px;
     background-color: #FFF;
     width: 100%;
     top: 0;
@@ -429,7 +429,7 @@ ul li a img {
 .top .top-white .headphones-img {
     float: left;
     margin-top: 9px;
-    margin-left: 180px;
+    margin-left: 250px;
 }
 .top .top-white .headphones {
     margin-top: 11px;
@@ -445,7 +445,7 @@ ul li a img {
     margin-left: 5px !important;                
 } 
 p.login {
-    margin-left: 25px !important;
+    margin-left: 45px !important;
 }
 p.login a {
     text-decoration: none;
