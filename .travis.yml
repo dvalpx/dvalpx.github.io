@@ -22,7 +22,7 @@ deploy:
     provider: pages
     skip-cleanup: true
     local_dir: docs/.vuepress/dist
-    github-token: 376be403bdb44c7dc4d8612b0de2a6ed3693a50e
+    github-token: $GITHUB_TOKEN
     repo: dvalpx/dvalpx.github.io
     keep-history: true
     target-branch: master
